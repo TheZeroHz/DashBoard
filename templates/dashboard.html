@@ -1,0 +1,62 @@
+
+{% extends 'layout.html' %}
+
+{% block content %}
+  <div class="row mt-4">
+    <div class="col-md-3">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Occupancy Status</h5>
+          <p class="card-text" id="status">{{ sensor_data["occupancy_status"] }}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Bad Smell Level</h5>
+          <canvas id="badSmellGauge" width="150" height="150"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Water Leakage</h5>
+          <p class="card-text">{{ sensor_data["water_leakage"] }}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Handwash Level</h5>
+          <p class="card-text">{{ sensor_data["handwash_level"] }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mt-4">
+    <div class="col-md-3">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Theft Detection</h5>
+          <p class="card-text">{{ sensor_data["theft_detected"] }}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Tissue Shortage</h5>
+          <p class="card-text">{{ sensor_data["tissue_shortage"] }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
